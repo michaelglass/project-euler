@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'time_this'
 
 accum = 0

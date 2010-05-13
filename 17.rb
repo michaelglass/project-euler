@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'time_this'
 
 def make_word(num)

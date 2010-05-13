@@ -1,30 +1,23 @@
 #!/usr/bin/env ruby
 require 'time_this'
-up_to = -1
-up_to = ARGV[0].to_i if(ARGV.size == 1)
 
-up_to = 100 if up_to <= 0
+def sum(num) #guess I could take a 
+  return nil if num < 1
+  accum = 0
+
+  (1..num).each {|num| accum += (block_given? ? yield(num) : num) }
+  accum
+end
 
 def sum_of_squares(num)
-  return nil if num < 1
-  accum = 0
-  (1..num).each do |unit|
-    accum += unit**2
-  end
-  accum
+  sum(num) {|num| num**2 }
 end
 
-def sum(num)
-  return nil if num < 1
-  accum = 0
-  (1..num).each do |unit|
-    accum += unit
-  end
-  accum
-end
 
 def square_of_sum(num)
-  sum(num)**2
+  sum(num) ** 2
 end
 
-puts ( square_of_sum(up_to) - sum_of_squares(up_to) )
+up_to = (ARGV[0] || 100).to_i
+
+puts square_of_sum(up_to) - sum_of_squares(up_to)

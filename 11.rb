@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'time_this'
 
 
@@ -74,29 +75,41 @@ height = chart.length
 width = chart[0].length
 
 largest = -1
+largest_i = -1
+largest_j = -1
+largest_dir = :undef
 (0...height).each do |i|
   (0...width).each do |j|
     product = product_horiz(i,j,chart)
     if product> largest
-      largest = product 
-      puts "horiz, #{i},#{j}"
+      largest, largest_dir,
+        largest_i, largest_j = 
+          product, :horizontal,
+          i,j
     end
     product = product_vert(i,j,chart)
     if product> largest
-      largest = product 
-      puts "vert, #{i},#{j}"
+      largest, largest_dir,
+        largest_i, largest_j = 
+          product, :vertical,
+          i,j
     end
     product = product_diag_nw_se(i,j,chart)
     if product> largest
-      largest = product 
-      puts "diag nw-se, #{i},#{j}"
+      largest, largest_dir,
+        largest_i, largest_j = 
+          product, :northwest_southeast,
+          i,j
     end
     product = product_diag_sw_ne(i,j,chart)
     if product> largest
-      largest = product 
-      puts "diag sw-ne, #{i},#{j}"
+      largest, largest_dir,
+        largest_i, largest_j = 
+          product, :southwest_northeast,
+          i,j
     end
   end
 end
 
+puts "#{largest_dir} from #{largest_i},#{largest_j}"
 puts largest

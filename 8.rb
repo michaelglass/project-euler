@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'time_this'
 
 huge_num = "73167176531330624919225119674426574742355349194934" \
@@ -23,11 +24,11 @@ huge_num = "73167176531330624919225119674426574742355349194934" \
 
 largest = -1
 
-(0..(huge_num.length-5)).each do |index|
+(0..(huge_num.length-5)).each do |index| #for each index up to -5
   product = 1
   (0..4).each do |offset|
-    product *= (huge_num[index + offset].to_i)
+    product *= (huge_num[index + offset].to_i) #find product of 4
   end
-  largest = product if product > largest
+  largest = product if product > largest #replace largest if it's larger...
 end
 puts largest
