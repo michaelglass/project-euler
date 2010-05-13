@@ -9,4 +9,4 @@ while(cur.to_s.length < 1000)
 end
 
 
-puts cur, last, term
+puts term
