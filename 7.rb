@@ -1,4 +1,4 @@
-start = Time.now
+require 'time_this'
 $primes = [2,3]
 find_primes = 10001
 
@@ -16,4 +16,3 @@ while($primes.length < find_primes)
 end
 
 puts $primes.last
-puts Time.now - start

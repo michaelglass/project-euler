@@ -1,4 +1,4 @@
-start = Time.now
+require 'time_this'
 $char_scores = {}
 score = 1
 ('A'..'Z').each do |char|
@@ -30,5 +30,3 @@ names.each_with_index do |name, index|
   score += name_value(name) * (index+1)
 end
 puts score
-
-puts Time.now - start

@@ -1,3 +1,5 @@
+require 'time_this'
+
 def make_word(num)
   units = ['zero','one','two','three','four','five','six','seven','eight','nine']
   decas = ['','ten','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']

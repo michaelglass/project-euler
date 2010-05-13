@@ -1,3 +1,4 @@
+require 'time_this'
 def palindrome?(str)
   str = str.to_s unless(str.is_a? String)
   half = str.length/2
@@ -6,7 +7,6 @@ def palindrome?(str)
   prefix == suffix.reverse
 end
 
-start = Time.now
 
 palindromes = []
 max = 999
@@ -27,5 +27,3 @@ max = 999
 end
   
 puts palindromes.max
-
-puts Time.now-start

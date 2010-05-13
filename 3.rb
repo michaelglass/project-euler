@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'time_this'
 up_to = -1
 up_to = ARGV[0].to_i if(ARGV.size == 1)
 

@@ -1,3 +1,4 @@
+require 'time_this'
 # 1000 = sqrt(c^2 - b^2) + b + c
 
 (0..600).each do |c|

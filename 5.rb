@@ -5,6 +5,7 @@
 # up_to = 600851475143 if up_to <= 0
 
 #find smallest/largest range...
+require 'time_this'
 
 def factor(num)
   return false if(num < 4)

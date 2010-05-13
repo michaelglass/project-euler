@@ -1,4 +1,4 @@
-start = Time.now
+require 'time_this'
 require 'stringio'
 def palindrome?(str)
   str = str.to_s unless(str.is_a? String)
@@ -35,5 +35,3 @@ sum = 0
 end
 
 puts sum
-
-puts Time.now - start
